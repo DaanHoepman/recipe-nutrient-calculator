@@ -20,12 +20,10 @@ class Config(object):
     LOG_FORMAT = '%(asctime)s - %(levelname)s - %(message)s'
 
     # Secret key for session management and CSRF protection
-    #SECRET_KEY = os.getenv('SECRET_KEY')
     SECRET_KEY = os.getenv('SECRET_KEY', 'mysecretkey')
     
     # Database URI for SQLAlchemy
-    #SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL')
-    SQALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL', 'sqlite:///site.db')
+    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     # Bootstrap settings

@@ -1,5 +1,4 @@
 import os
-import logging
 
 from flask import Blueprint, request, render_template, redirect, url_for, flash, current_app
 from flask_login import login_required, current_user
