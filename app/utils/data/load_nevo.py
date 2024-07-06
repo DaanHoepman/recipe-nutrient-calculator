@@ -1,5 +1,3 @@
-import json
-
 from app.utils import convert_to_float
 from app.utils.data import file_reader
 from app.utils.update_models import update_ingredient, update_nutrition

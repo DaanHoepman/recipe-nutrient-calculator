@@ -15,7 +15,6 @@ TO_SCRAPE = ['sr_legacy_food', 'foundation_food']
 
 
 # Load NEVO variables
-DATABASE_PATH =  os.getenv("DATABASE_URL")
 NEVO_HEADERS = [
     'NEVO-code',
     'Voedingsmiddelnaam/Dutch food name',
