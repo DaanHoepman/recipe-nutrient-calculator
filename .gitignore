@@ -117,3 +117,4 @@ logs/
 # Test files
 script.py
 test.ipynb
+.ipynb
