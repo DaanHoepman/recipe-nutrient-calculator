@@ -92,9 +92,10 @@ The Recipe Nutrient Calculator is a web application that allows users to input a
     - `food_nutrient.csv`
     - `food_portion.csv`
     - `food.csv`
+
     If any of these files are missing, only the information provided will be updated in the database.
 
-    Only the ingredients present in `food.csv` will be updated, to specify which ingredient groups to update,
+    Only the ingredients present in `food.csv` will be updated. To specify which ingredient groups to update,
     edit the `TO_SCRAPE` variable in the `app/utils/data/__init__.py` file to include Foundation Foods, SR Legacy, FNDDS or Branded.
 
 ## License
