@@ -1,0 +1,58 @@
+{% extends "layout/base.html" %}
+
+{% block title %} Registreren {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+{% endblock stylesheets %}
+
+{% block content %}
+<div class="container">
+    <div class="register-container">
+
+        {% if not success %}
+
+            <form action="{{ url_for('auth.register') }}" method="post">
+
+                {{ form.hidden_tag() }}
+
+                <div class="input-group">
+                    {{ form.username(class="form-control", placeholder="Gebruikersnaam") }}
+                </div>
+                <div class="input-group">
+                    {{ form.password(class="form-control", placeholder="Wachtwoord") }}
+                </div>
+                <div class="input-group">
+                    {{ form.email(class="form-control", placeholder="E-mail") }}
+                </div>
+                <div class="input-group">
+                    {{ form.full_name(class="form-control", placeholder="Volledige naam") }}
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Ik ga akkoord met de <a href="#" class="text-dark">algemene voorwaarden</a>
+                    </label>
+                </div>
+                <div class="text-center">
+                    <button type="submit" name="register" class="submit-button">Registreren</button>
+                </div>
+                <p class="text-center">
+                    Al een account? <a href="{{ url_for('auth.login') }}">Log in</a>
+            </form>
+
+        {% else %}
+
+            <p class="text-center">
+                <a href="{{url_for('auth.login') }}">Log in</a>
+            </p>
+
+        {% endif %}
+
+    </div>
+</div>
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

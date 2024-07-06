@@ -1,0 +1,37 @@
+/* Import the base styles */
+@import url('styles.css');
+
+.error-container {
+    background-color: var(--primary);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    max-width: 400px;
+    width: 100%;
+}
+
+.error-container h1 {
+    font-size: 72px;
+    margin-bottom: 10px;
+}
+
+.error-container p {
+    font-size: 18px;
+    color: var(--text-dark);
+}
+
+.error-container a {
+    color: var(--link);
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    background-color: var(--secondary);
+    color: var(--text-light);
+    font-size: 16px;
+}
+
+.error-container a:hover {
+    background-color: var(--link-hover);
+}

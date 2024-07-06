@@ -1,0 +1,95 @@
+/* Import the base styles */
+@import url('styles.css');
+
+.text-message {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #555;
+}
+
+.register-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--primary);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.register-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group input[type="text"],
+.input-group input[type="password"],
+.input-group input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--secondary);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-check {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.form-check-input {
+    margin-right: 10px;
+}
+
+.form-check-label {
+    font-size: 14px;
+}
+
+.form-check-label a {
+    color: var(--secondary);
+    text-decoration: none;
+}
+
+.form-check-label a:hover {
+    text-decoration: underline;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--secondary);
+    color: var(--text-light);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: var(--secondary-hover);
+}
+
+p.text-center {
+    text-align: center;
+    margin-top: 10px;
+    color: var(--text-dark)
+}
+
+p.text-center a {
+    color: var(--link);
+    text-decoration: none;
+}
+
+p.text-center a:hover {
+    text-decoration: underline;
+}

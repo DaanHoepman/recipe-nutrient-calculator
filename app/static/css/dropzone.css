@@ -1,0 +1,83 @@
+/* Import the base styles */
+@import url('styles.css');
+
+.dropzone-box {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 2px dashed var(--primary);
+    border-radius: 10px;
+    background-color: var(--tertiary);
+    text-align: center;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.dropzone-area {
+    position: relative;
+    padding: 20px;
+    margin: 20px 0;
+    border: 2px dashed var(--secondary);
+    border-radius: 10px;
+    background-color: var(--primary);
+}
+
+.dropzone-area.dragover {
+    background-color: var(--primary-hover);
+}
+
+.file-upload-icon svg {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+}
+
+.dropzone-area p {
+    margin: 10px 0;
+    color: var(--text-dark);
+}
+
+input[type="file"] {
+    display: none;
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+    cursor: pointer;
+    color: var(--link);
+    text-decoration: underline;
+}
+
+.dropzone-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--link);
+    color: var(--text-light);
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button[type="reset"] {
+    background-color: var(--secondary);
+}
+
+button:hover {
+    background-color: var(--link-hover);
+}
+
+button[type="reset"]:hover {
+    background-color: var(--secondary-hover);
+}
+
+.message {
+    margin-top: 10px;
+    color: var(--text-dark);
+}

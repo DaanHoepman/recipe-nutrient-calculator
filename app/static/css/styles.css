@@ -1,0 +1,204 @@
+/* Root variables */
+:root {
+    /* main colors */
+    --background: #F1E5D1;
+    --primary: #DBB5B5;
+    --secondary: #C39898;
+    --tertiary: #E8CFC8;
+    --header: #987070;
+
+    /* main hover colors */
+    --primary-hover: #C59A9A;
+    --secondary-hover: #A97A7A;
+    --tertiary-hover: #D2A9A3;
+    --header-hover: #7C5858;
+
+    /* text colors */
+    --text-light: #FFFFFF;
+    --text-dark: #333333;
+    --link: #5C8DFF;
+    --link-hover: #4169E1;
+
+    /* flash colors */
+    --flash-success-bg: #D4EDDA;
+    --flash-success-text: #155724;
+    --flash-error-bg: #F8D7DA;
+    --flash-error-text: #721C24;
+    --flash-warning-bg: #FFF3CD;
+    --flash-warning-text: #856404;
+    --flash-info-bg: #D1ECF1;
+    --flash-info-text: #0C5460;
+}
+
+
+/* Reset default styles */
+html, body {
+    width: 100%;
+    font-family: Arial, sans-serif;
+    background-color: var(--background);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* Container styles */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+
+
+/* Header styles */
+header {
+    background-color: var(--header);
+    color: var(--text-light);
+    padding: 10px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; /* Ensure all items are vertically aligned */
+}
+
+header nav ul li {
+    margin-left: 20px;
+    position: relative; /* Required for dropdown positioning */
+}
+
+header nav ul li a,
+header nav ul li .dropbtn {
+    background-color: var(--header);
+    color: var(--text-light);
+    border: none;
+    font-size: 16px;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0;
+}
+
+header nav ul li a:hover,
+header nav ul li .dropbtn:hover {
+    text-decoration: underline;
+    background-color: var(--header-hover); /* Hover background color */
+}
+
+header nav ul .dropdown {
+    cursor: pointer;
+}
+
+header nav ul .dropdown .dropbtn::after {
+    content: ' ▼';
+    font-size: 12px;
+}
+
+header nav ul .dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--header);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+header nav ul .dropdown .dropdown-content a {
+    color: var(--text-light);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+header nav ul .dropdown .dropdown-content a:hover {
+    background-color: var(--header-hover);
+}
+
+header nav ul .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
+/* Footer styles */
+footer {
+    background-color: var(--header);
+    color: var(--text-light);
+    text-align: center;
+    padding: 20px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer .container {
+    padding: 0 20px;
+}
+
+
+
+/* Flash messages styles */
+.flash-messages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Changed from fixed to relative */
+    margin: 20px auto;  /* Center horizontally */
+    width: 80%; /* Width of the container for centering */
+    z-index: 1000;
+}
+
+.flash {
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: opacity 0.3s ease;
+    width: 100%; /* Full width within the container */
+    text-align: center; /* Center text within the message */
+}
+
+.flash-success {
+    color: var(--flash-success-text);
+    background-color: var(--flash-success-bg);
+    border-color: var(--flash-success-text);
+}
+
+.flash-error {
+    color: var(--flash-error-text);
+    background-color: var(--flash-error-bg);
+    border-color: var(--flash-error-text);
+}
+
+.flash-warning {
+    color: var(--flash-warning-text);
+    background-color: var(--flash-warning-bg);
+    border-color: var(--flash-warning-text);
+}
+
+.flash-info {
+    color: var(--flash-info-text);
+    background-color: var(--flash-info-bg);
+    border-color: var(--flash-info-text);
+}

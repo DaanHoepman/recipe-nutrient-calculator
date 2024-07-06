@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}Nutrition Label - {{ app_name }}{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/nutrition_label.css')}}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Voedingswaarde per</h1>
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>100 g</th>
+                <th>Portie ({{portion}} g)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Energie</td>
+                <td>{{energy_kJ}} kJ / {{energy_kcal}} kcal</td>
+                <td>{{energy_pp_kJ}} kJ / {{energy_pp_kcal}} kcal</td>
+            </tr>
+            <tr>
+                <td>Vetten</td>
+                <td>{{fat}} g</td>
+                <td>{{fat_pp}} g</td>
+            </tr>
+            <tr>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;waarvan verzadigde vetzuren</td>
+                <td>{{sat_fat}} g</td>
+                <td>{{sat_fat_pp}} g</td>
+            </tr>
+            <tr>
+                <td>Koolhydraten</td>
+                <td>{{carb}} g</td>
+                <td>{{carb_pp}} g</td>
+            </tr>
+            <tr>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;waarvan suikers</td>
+                <td>{{sugar}} g</td>
+                <td>{{sugar_pp}} g</td>
+            </tr>
+            <tr>
+                <td>Eiwitten</td>
+                <td>{{prot}} g</td>
+                <td>{{prot_pp}} g</td>
+            </tr>
+            <tr>
+                <td>Zout</td>
+                <td>{{salt}} g</td>
+                <td>{{salt_pp}} g</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}

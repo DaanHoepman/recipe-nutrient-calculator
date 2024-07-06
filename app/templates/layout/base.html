@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        {{ app_fix }} - {% block title %}{% endblock title%}
+    </title>
+
+    <!-- CSS Files-->
+    <link id="pagestyle" rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+    <!-- Page-specific CSS goes HERE -->
+    {% block stylesheets %}{% endblock stylesheets%}
+</head>
+
+<body>
+    <!-- General header will be injected HERE -->
+    {% include 'includes/header.html' %}
+
+    <!-- Flash messages display HERE -->
+    {% include 'includes/flash.html' %}
+
+    <!-- Page-specific content will be injected HERE -->
+    {% block content %}{% endblock %}
+
+    <!-- General footer will be injected HERE -->
+    {% include 'includes/footer.html' %}
+
+    <!-- Page-specific JavaScript files HERE -->
+    {% block javascripts %}
+    {% endblock %}
+
+</body>
+</html>

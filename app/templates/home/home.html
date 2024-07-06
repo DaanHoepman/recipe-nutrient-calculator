@@ -1,0 +1,17 @@
+{% extends "layout/base.html" %}
+
+{% block title %} Home {% endblock title %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/form.css')}}">
+{% endblock stylesheets %}
+
+{% block content %}
+<div class="container">
+    <form action="" method="get" id="top-form">
+        <label for="url">Recept URL:</label>
+        <input type="text" id="url" name="url">
+        <button type="submit">Bereken</button>
+    </form>
+</div>
+{% endblock content %}

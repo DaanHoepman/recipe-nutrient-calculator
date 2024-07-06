@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Nutrition Table - {{ app_name }}{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/nutrition_table.css')}}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Voedingswaarde per ingrediënt</h1>
+    <table id="nutrients-table">
+        <thead>
+            <tr>
+                <th>Ingrediënt</th>
+                <th>Hoeveelheid</th>
+                <th class="vertical-header">Energie</th>
+                <th class="vertical-header">Totaal Vetten</th>
+                <th class="vertical-header">Waarvan Verzadigd</th>
+                <th class="vertical-header">Koolhydraten</th>
+                <th class="vertical-header">Waarvan Suikers</th>
+                <th class="vertical-header">Eiwitten</th>
+                <th class="vertical-header">Zout</th>
+            </tr>
+        </thead>
+        <tbody id="ingredients-body">
+            {% for ingredient in ingredients %}
+            <tr>
+                <td>{{ingredient["name"]}}</td>
+                <td>{{ingredient["amount"]}} g</td>
+                <td>{{ingredient["energy_kJ"]}} kJ / {{ingredient["energy_kcal"]}} kcal</td>
+                <td>{{ingredient["fat"]}} g</td>
+                <td>{{ingredient["sat_fat"]}} g</td>
+                <td>{{ingredient["carb"]}} g</td>
+                <td>{{ingredient["sugar"]}} g</td>
+                <td>{{ingredient["protein"]}} g</td>
+                <td>{{ingredient["salt"]}} g</td>
+            </tr>
+            { % endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
