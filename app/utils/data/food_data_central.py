@@ -1,5 +1,6 @@
 import requests
 import json
+import app
 
 from app.utils.exceptions import APIRequestError, APISearchError
 from app.utils.data import FDC_API_KEY, FDC_SEARCH_URL, FDC_MATCH_URL, FDC_BULK_MATCH_URL

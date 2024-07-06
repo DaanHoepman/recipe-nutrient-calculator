@@ -20,17 +20,22 @@ class Config(object):
     LOG_FORMAT = '%(asctime)s - %(levelname)s - %(message)s'
 
     # Secret key for session management and CSRF protection
-    SECRET_KEY = os.getenv('SECRET_KEY')
+    #SECRET_KEY = os.getenv('SECRET_KEY')
+    SECRET_KEY = os.getenv('SECRET_KEY', 'mysecretkey')
     
     # Database URI for SQLAlchemy
-    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL')
-    SQLALCHEMY_TRACK_MODIFICATIONS = True
+    #SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL')
+    SQALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL', 'sqlite:///site.db')
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     # Bootstrap settings
     BOOTSTRAP_FONTAWESOME = True
     
     # Folder to store uploaded files
     UPLOAD_FOLDER = os.path.join(os.path.dirname(__file__), 'uploads')
+
+    # FoodData Central API key
+    FDC_API_KEY = os.getenv("API_KEY")
 
 class ProductionConfig(Config):
     """

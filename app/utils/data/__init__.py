@@ -1,14 +1,11 @@
 import os
 import csv
-
-from dotenv import load_dotenv
+import app
 
 #--------------------
 
-load_dotenv()
-
 # Load food-data central variables
-FDC_API_KEY = os.getenv("USFDC_API_KEY")
+FDC_API_KEY = app.config['FDC_API_KEY']
 FDC_SEARCH_URL = "https://api.nal.usda.gov/fdc/v1/foods/search?"
 FDC_MATCH_URL = "https://api.nal.usda.gov/fdc/v1/food"
 FDC_BULK_MATCH_URL = "https://api.nal.usda.gov/fdc/v1/foods?"
