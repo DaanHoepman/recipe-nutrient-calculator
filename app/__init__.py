@@ -3,6 +3,8 @@ from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 
+from app.config import config_dict
+
 #--------------------
 lm = LoginManager()
 db = SQLAlchemy()
@@ -69,7 +71,7 @@ def create_app():
     app = Flask(__name__, template_folder='templates')
 
     # Load configuration from the Config class
-    app.config.from_object('app.config.DebugConfig')
+    app.config.from_object(config_dict['development']) # ! Make sure to change this to 'production' when deploying
 
     # Initialize instances
     register_extensions(app)
