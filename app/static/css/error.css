@@ -4,10 +4,11 @@
 .error-container {
     background-color: var(--primary);
     padding: 20px;
+    margin: 0 auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    max-width: 400px;
-    width: 100%;
+    width: 80%;
+    text-align: center;
 }
 
 .error-container h1 {
@@ -21,17 +22,16 @@
 }
 
 .error-container a {
-    color: var(--link);
     text-decoration: none;
     display: inline-block;
     margin-top: 20px;
     padding: 10px 20px;
     border-radius: 4px;
-    background-color: var(--secondary);
+    background-color: var(--tertiary);
     color: var(--text-light);
     font-size: 16px;
 }
 
 .error-container a:hover {
-    background-color: var(--link-hover);
+    background-color: var(--tertiary-hover);
 }

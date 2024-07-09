@@ -1,21 +1,22 @@
 /* Root variables */
 :root {
     /* main colors */
-    --background: #F1E5D1;
-    --primary: #DBB5B5;
-    --secondary: #C39898;
-    --tertiary: #E8CFC8;
-    --header: #987070;
+    --background: #EBFADB;
+    --primary: #B3EDA9;
+    --secondary: #5BC590;
+    --tertiary: #009A6E;
+    --header: #105D5E;
 
     /* main hover colors */
-    --primary-hover: #C59A9A;
-    --secondary-hover: #A97A7A;
-    --tertiary-hover: #D2A9A3;
-    --header-hover: #7C5858;
+    --primary-hover: #99DB8C;
+    --secondary-hover: #4AB180;
+    --tertiary-hover: #00855A;
+    --header-hover: #0D4A4B;
 
     /* text colors */
-    --text-light: #FFFFFF;
-    --text-dark: #333333;
+    --text-light: #C2CBC9;
+    --text-medium: #767F7D;
+    --text-dark: #293E33;
     --link: #5C8DFF;
     --link-hover: #4169E1;
 
@@ -110,7 +111,7 @@ header nav ul .dropdown {
 }
 
 header nav ul .dropdown .dropbtn::after {
-    content: ' ▼';
+    content: ' \25BC';
     font-size: 12px;
 }
 
