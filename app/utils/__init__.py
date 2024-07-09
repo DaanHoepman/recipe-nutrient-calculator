@@ -1,4 +1,5 @@
 from sqlalchemy.exc import IntegrityError
+from flask import current_app
 
 from app.models import Ingredient, Nutrition, NutriConversion
 from app.utils.exceptions import ElementNotFound, DatabaseError
@@ -83,6 +84,7 @@ def try_commit(error_id) -> None:
     Exception:  If the commit fails
     """
     try:
+        current_app.logger.debug("Committing changes to database...")
         db.session.commit()
     except IntegrityError:
         db.session.rollback()

@@ -1,6 +1,8 @@
 import requests
 import json
 
+from flask import current_app
+
 from app.utils.exceptions import APIRequestError, APISearchError
 from app.utils.data import FDC_API_KEY, FDC_SEARCH_URL, FDC_MATCH_URL, FDC_BULK_MATCH_URL
 
@@ -30,6 +32,10 @@ def search(query: str, dataType: list[str] = ['Foundation', 'SR Legacy'], pageSi
         'dataType': dataType,
         'pageSize': pageSize
         }
+    
+    # Log
+    log_params = {key : value for key, value in params.items() if key != 'api_key'}
+    current_app.logger.debug(f"Searching FDC API by name, with parameters: {log_params}")
 
     # Make the API request
     response = requests.get(FDC_SEARCH_URL, params=params)
@@ -40,6 +46,7 @@ def search(query: str, dataType: list[str] = ['Foundation', 'SR Legacy'], pageSi
     
     # Parse the API response
     try:
+        current_app.logger.debug(f"API response succesfull, parsing...")
         return json.loads(response.content)
     except:
         raise APISearchError("API response could not be parsed")
@@ -69,6 +76,10 @@ def match(fdcId: str, format: str = 'full') -> dict:
         'format': format
         }
     
+    # Log
+    log_params = {key : value for key, value in params.items() if key != 'api_key'}
+    current_app.logger.debug(f"Searching FDC API by FDC ID {fdcId}, with parameters: {log_params}")
+    
     # Make the API request
     response = requests.get(url, params=params)
 
@@ -78,6 +89,7 @@ def match(fdcId: str, format: str = 'full') -> dict:
     
     # Parse the API response
     try:
+        current_app.logger.debug(f"API response succesfull, parsing...")
         return json.loads(response.content)
     except:
         raise APISearchError("API response could not be parsed")
@@ -107,6 +119,10 @@ def bulk_match(fdcIds: list[str], format: str = 'full') -> list[dict]:
         'format': format
         }
     
+    # Log
+    log_params = {key : value for key, value in params.items() if key != 'api_key'}
+    current_app.logger.debug(f"Bulk searching FDC API by FDC IDs, with parameters: {log_params}")
+    
     # Make the API request
     response = requests.get(FDC_BULK_MATCH_URL, params=params)
 
@@ -116,6 +132,7 @@ def bulk_match(fdcIds: list[str], format: str = 'full') -> list[dict]:
     
     # Parse the API response
     try:
+        current_app.logger.debug(f"API response succesfull, parsing...")
         return json.loads(response.content)
     except:
         raise APISearchError("API response could not be parsed")

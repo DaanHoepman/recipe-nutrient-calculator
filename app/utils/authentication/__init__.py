@@ -3,7 +3,7 @@ import hashlib
 import binascii
 
 from functools import wraps
-from flask import redirect, url_for, flash
+from flask import redirect, url_for, flash, current_app
 from flask_login import current_user
 
 #--------------------
@@ -67,11 +67,15 @@ def admin_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
         if not current_user.is_authenticated:
-            flash('Je moet ingelogd zijn om deze pagina te kunnen bekijken.', 'danger')
+            flash('Je moet ingelogd zijn om deze pagina te kunnen bekijken.', 'error')
+            current_app.logger.warning(f'User {current_user.username} tried to access an admin page without being authenticated')
+
             return redirect(url_for('auth.login'))
         
         elif not current_user.is_admin:
-            flash('Je hebt geen toestemming om deze pagina te bekijken', 'danger')
+            flash('Je hebt geen toestemming om deze pagina te bekijken', 'warning')
+            current_app.logger.warning(f'User {current_user.username} tried to access an admin page without being an admin')
+
             return redirect(url_for('main.home'))
         return f(*args, **kwargs)
     return decorated_function

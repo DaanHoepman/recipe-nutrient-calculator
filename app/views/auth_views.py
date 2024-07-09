@@ -31,6 +31,7 @@ def login():
         # Something (user or password) is not ok
         flash('Gebruikersnaam of wachtwoord is onjuist', "error")
         logout_user()
+        current_app.logger.debug(f'User {username} tried to login with incorrect credentials')
         return render_template('accounts/login.html', form=login_form)
     
     if not current_user.is_authenticated:
@@ -49,12 +50,14 @@ def register():
         user = User.query.filter_by(username=username).first()
         if user:
             flash('Deze gebruikersnaam bestaat al', "error")
+            current_app.logger.debug(f'User {username} tried to register an account with an existing username')
             return render_template('accounts/register.html', success=False, form=create_account_form)
         
         # Check email exists
         user = User.query.filter_by(email=email).first()
         if user:
             flash('Dit e-mailadres is al in gebruik', "error")
+            current_app.logger.debug(f'User {username} tried to register an account with an existing email')
             return render_template('accounts/register.html', success=False, form=create_account_form)
         
         # Else we can create the user

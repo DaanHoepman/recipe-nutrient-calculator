@@ -1,5 +1,4 @@
 from deep_translator import GoogleTranslator
-from flask import current_app
 
 from app.utils.update_models import update_ingredient, update_nutrition, update_nutriConversion, update_conversion
 from app.utils.data import TO_SCRAPE, file_reader
@@ -208,8 +207,6 @@ def __store_conversion(portion_path: str) -> None:
 
         measure_unit = MEASURE_UNITS[int(measure_unit_id)] if MEASURE_UNITS[int(measure_unit_id)] else None
         unit = " ".join([elem for elem in [measure_unit, description, modifier] if elem]) if (measure_unit or description or modifier) else ""
-
-        current_app.logger.debug(f"fdc_id: {fdc_id}, amount: {amount}, unit: {unit}, value: {gram_weight}")
 
         # Update the conversion object
         update_conversion(
