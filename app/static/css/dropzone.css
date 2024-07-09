@@ -5,9 +5,9 @@
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-    border: 2px dashed var(--primary);
+    border: 2px dashed var(--tertiary);
     border-radius: 10px;
-    background-color: var(--tertiary);
+    background-color: var(--primary);
     text-align: center;
     font-family: 'Work Sans', sans-serif;
 }
@@ -16,13 +16,13 @@
     position: relative;
     padding: 20px;
     margin: 20px 0;
-    border: 2px dashed var(--secondary);
+    border: 2px dashed var(--tertiary);
     border-radius: 10px;
-    background-color: var(--primary);
+    background-color: var(--secondary);
 }
 
 .dropzone-area.dragover {
-    background-color: var(--primary-hover);
+    background-color: var(--secondary-hover);
 }
 
 .file-upload-icon svg {
@@ -59,25 +59,21 @@ button {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    background-color: var(--link);
+    background-color: var(--tertiary);
     color: var(--text-light);
     cursor: pointer;
     font-size: 16px;
 }
 
-button[type="reset"] {
-    background-color: var(--secondary);
+button:hover {
+    background-color: var(--tertiary-hover);
 }
 
-button:hover {
-    background-color: var(--link-hover);
+button[type="reset"] {
+    color: var(--text-dark);
+    background-color: var(--primary);
 }
 
 button[type="reset"]:hover {
-    background-color: var(--secondary-hover);
-}
-
-.message {
-    margin-top: 10px;
-    color: var(--text-dark);
+    background-color: var(--primary-hover);
 }
