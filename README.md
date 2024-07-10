@@ -102,6 +102,12 @@ The Recipe Nutrient Calculator is a web application that allows users to input a
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
+### Third-party licenses
+
+This project includes code from the [ingredient-parser](https://github.com/strangetom/ingredient-parser) project, which is licensed under the [MIT License](https://github.com/strangetom/ingredient-parser/blob/master/LICENSE).
+
+This project includes code from the [recipe-scrapers](https://github.com/hhursev/recipe-scrapers) project, which is licensed under the [MIT License](https://github.com/hhursev/recipe-scrapers/blob/main/LICENSE).
+
 ## Contact
 
-For any inquiries or issues, please contact Daan Hoepman at [daan.hoepman1508@gmail.com].
+For any inquiries or issues, please contact Daan Hoepman at [daan.hoepman1508@gmail.com](mailto:daan.hoepman1508@gmail.com?Subject=[GitHub]%20Recipe%20Nutrient%20Calculator).
