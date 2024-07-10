@@ -1,4 +1,3 @@
-import os
 import csv
 
 from app.config import Config
