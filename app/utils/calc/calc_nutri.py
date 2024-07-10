@@ -1,5 +1,8 @@
 from app import db
 from app.models import Ingredient, Nutrition, Conversion
+from app.utils.calc import THRESHOLD
+from app.utils.calc.convertion import convert_amount_db, convert_amount_API
+from app.utils.calc.parse_ingredient import parse_ingredient, find_best_match_db, find_best_match_API, extract_API_info
 
 #--------------------
 
@@ -101,7 +104,7 @@ def process_ingredients(ingredient_list: list[str]) -> dict:
 
     # Return dictionary with nutrition values and list of used / not available ingredients
     return {
-        'nutri': nutri_dict,
+        'nutrition': nutri_dict,
         'used_ingredients': used_ingredients,
         'error_ingredients': na_ingredients
     }
