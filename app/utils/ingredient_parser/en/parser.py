@@ -4,11 +4,11 @@ from importlib.resources import as_file, files
 
 import pycrfsuite
 
-from .._common import group_consecutive_idx
-from ..dataclasses import ParsedIngredient, ParserDebugInfo
-from ._utils import pluralise_units
-from .postprocess import PostProcessor
-from .preprocess import PreProcessor
+from app.utils.ingredient_parser._common import group_consecutive_idx
+from app.utils.ingredient_parser.dataclasses import ParsedIngredient, ParserDebugInfo
+from app.utils.ingredient_parser.en._utils import pluralise_units
+from app.utils.ingredient_parser.en.postprocess import PostProcessor
+from app.utils.ingredient_parser.en.preprocess import PreProcessor
 
 # Create TAGGER object that can be reused between function calls
 # We only want to load the model into TAGGER once, but only do it

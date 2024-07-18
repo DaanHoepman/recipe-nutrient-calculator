@@ -7,9 +7,9 @@ from itertools import chain
 import pint
 from nltk.stem.porter import PorterStemmer
 
-from .._common import is_float, is_range
-from ..dataclasses import IngredientAmount
-from ._constants import UNITS
+from app.utils.ingredient_parser._common import is_float, is_range
+from app.utils.ingredient_parser.dataclasses import IngredientAmount
+from app.utils.ingredient_parser.en._constants import UNITS
 
 UREG = pint.UnitRegistry()
 

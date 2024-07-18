@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 
-from ingredient_parser.en import inspect_parser_en, parse_ingredient_en
+from app.utils.ingredient_parser.en import inspect_parser_en, parse_ingredient_en
 
-from . import SUPPORTED_LANGUAGES
-from .dataclasses import ParsedIngredient, ParserDebugInfo
+from app.utils.ingredient_parser import SUPPORTED_LANGUAGES
+from app.utils.ingredient_parser.dataclasses import ParsedIngredient, ParserDebugInfo
 
 
 def parse_ingredient(

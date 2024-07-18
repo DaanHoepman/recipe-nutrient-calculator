@@ -1,5 +1,5 @@
-from ._common import SUPPORTED_LANGUAGES, download_nltk_resources, show_model_card
-from .parsers import inspect_parser, parse_ingredient, parse_multiple_ingredients
+from app.utils.ingredient_parser._common import SUPPORTED_LANGUAGES, download_nltk_resources, show_model_card
+from app.utils.ingredient_parser.parsers import inspect_parser, parse_ingredient, parse_multiple_ingredients
 
 download_nltk_resources()
 

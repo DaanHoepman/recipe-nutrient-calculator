@@ -8,19 +8,19 @@ from itertools import chain, pairwise
 from statistics import mean
 from typing import Any
 
-from .._common import consume, group_consecutive_idx
-from ..dataclasses import (
+from app.utils.ingredient_parser._common import consume, group_consecutive_idx
+from app.utils.ingredient_parser.dataclasses import (
     CompositeIngredientAmount,
     IngredientAmount,
     IngredientText,
     ParsedIngredient,
 )
-from ._constants import (
+from app.utils.ingredient_parser.en._constants import (
     APPROXIMATE_TOKENS,
     SINGULAR_TOKENS,
     STOP_WORDS,
 )
-from ._utils import ingredient_amount_factory
+from app.utils.ingredient_parser.en._utils import ingredient_amount_factory
 
 WORD_CHAR = re.compile(r"\w")
 
